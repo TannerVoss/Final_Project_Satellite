@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/satellite.js/4.0.0/satellite.min.js"></script>
+    <!-- import SatelliteJS cdn-->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.81/Build/Cesium/Cesium.js"></script>
+    <!-- import Cesium cdn-->
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.81/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>Satellite Tracker</title>
+</head>
+
+<body>
+    <script>
+        // JS inside HTML for now.
+        const StarLink_24 = // sample data
+            `1 44238U 19029D   21346.90763308  .00004453  00000+0  22516-3 0  9998 
+             2 44238  52.9966 252.5934 0002926  91.7992 268.3337 15.18994418139775` // use template literals (string)
+
+        const satrec = satellite.twoline2satrec( // use sample language from SatelliteJS
+            StarLink_24.split('\n')[0].trim(), // split string into ordered list, put into array and return array
+            StarLink_24.split('\n')[1].trim() // trim removes spaces before and after string
+        );
+
+        // create a way to find the position of the satellite at any point in time
+        const date = new Date();
+        const positionAndVelocity = satellite.propagate(satrec, date);
+        const gmst = satellite.gstime(date);
+        const position = satellite.eciToGeodetic(positionAndVelocity.position, gmst);
+
+        console.log(position.longitude); // in radians
+        console.log(position.latitude); // in radians
+        console.log(position.height); // in km
+    </script>
+</body>
+
+</html>
