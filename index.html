@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/satellite.js/4.1.3/satellite.min.js"></script>
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.88/Build/Cesium/Cesium.js"></script>
-    <link
-      href="https://cesium.com/downloads/cesiumjs/releases/1.88/Build/Cesium/Widgets/widgets.css"
-      rel="stylesheet"
-    />
-    <!-- <link href="styles.css" rel="stylesheet"> -->
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.88/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Orbitron:wght@600&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Satellite Tracker</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="cesiumContainer"></div>
-  </body>
+    <h1>StarLink Satellite Tracker</h1>
+    <section>
+        <h2>Input TLE data below</h2>
+        <div class="card">
+            <div class="search">
+                <textarea class="satInput" placeholder="1 44238U 19029D   21349.40785262  .00005641  00000+0  28092-3 0  9994 &#10 2 44238  52.9961 241.1340 0002909  98.2402 261.8922 15.19025283141816"></textarea>
+            </div>
+    </section>
+</body>
+
 </html>
 
 <!-- <a href="https://www.vecteezy.com/free-vector/satellite">Satellite Vectors by Vecteezy</a> -->

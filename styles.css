@@ -1,35 +1,72 @@
 html,
 body {
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    height: 90%;
+    background-color: black;
+    color: white;
 }
 
 #cesiumContainer {
-    height: 100%;
+    height: 90%;
 }
 
-#loading {
-    width: 100%;
-    height: 100%;
-    background: #000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    color: white;
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+}
+
+.card {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.5s, visibility 0.5s;
-    visibility: visible;
+    background-color: darkgray;
+    color: white;
+    opacity: 0.9;
+    padding: 1px;
+    border-radius: 25px;
+    width: 100%;
+    height: 36px;
+    max-width: 700px;
 }
 
-#h1 {
-    color: blue;
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    padding: 1px;
 }
 
-.disappear {
-    opacity: 0!important;
-    visibility: hidden!important;
+textarea.satInput {
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: 70%;
+    font-weight: 900;
+    text-indent: 5px;
+    transition: .35s ease;
+    width: 100%;
+    background-color: lightskyblue;
+    width: 400px;
+    height: 22px;
+    line-height: 1;
+    resize: none;
+    text-align: justify;
+    text-align-last: center;
+    -moz-text-align-last: center;
+}
+
+textarea.satInput:hover {
+    background-color: white;
+}
+
+::placeholder {
+    font-size: 100%;
+    font-weight: 900;
+    text-indent: 5px;
 }
