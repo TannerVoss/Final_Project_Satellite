@@ -101,11 +101,13 @@ const homeButton = document.querySelector(".homeButton");
 homeButton.addEventListener("click", updateHomeListener);
 homeInput.addEventListener("keydown", updateHomeListener);
 
-tleButton.addEventListener("click", function () {});
+tleButton.addEventListener("click", addSatellite);
 
-tleInput.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") trackSat();
-});
+tleInput.addEventListener("keydown", addSatellite);
+
+function addSatellite(event) {
+  if (event.key == "Enter" || event.type == "click") setTLE(tleInput.value);
+}
 
 function updateHomeListener(event) {
   if (event.key == "Enter" || event.type == "click") setHome();
@@ -126,6 +128,52 @@ function setHome() {
     );
     homeInput.style.border = "none";
     homeInput.blur();
+  }
+}
+
+function setTLE(val) {
+  let nextSat = val;
+
+  try {
+    tleInput.style.border = "none";
+    const satrec = satellite.twoline2satrec(
+      nextSat.split("\n")[0].trim(),
+      nextSat.split("\n")[1].trim()
+    );
+
+    const positionsOverTime = new Cesium.SampledPositionProperty();
+    for (let i = 0; i < totalSeconds; i += timestepInSeconds) {
+      const time = Cesium.JulianDate.addSeconds(
+        start,
+        i,
+        new Cesium.JulianDate()
+      );
+      const jsDate = Cesium.JulianDate.toDate(time);
+
+      const positionAndVelocity = satellite.propagate(satrec, jsDate);
+      const gmst = satellite.gstime(jsDate);
+      const p = satellite.eciToGeodetic(positionAndVelocity.position, gmst);
+
+      const position = Cesium.Cartesian3.fromRadians(
+        p.longitude,
+        p.latitude,
+        p.height * 550
+      ); // Pull Position from SatelliteJS
+      positionsOverTime.addSample(time, position);
+    }
+    viewer.entities.add({
+      position: positionsOverTime,
+      billboard: {
+        image: getDataUrl(),
+        scale: 1.0,
+        scaleByDistance: new Cesium.NearFarScalar(0, 1.5, 8.0e6, 0.05),
+      },
+    });
+    tleInput.value = "";
+    tleInput.blur();
+  } catch (error) {
+    console.error(error);
+    tleInput.style.border = "2px solid red";
   }
 }
 
