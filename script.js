@@ -114,8 +114,7 @@ function updateTLEListener(event) {
 }
 
 function setTLE() {
-    let values = tleInput.value();
-    Satellite = values;
+
 }
 
 function setHome() {
