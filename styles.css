@@ -21,8 +21,8 @@ body {
     padding: 1px;
 }
 
-.author h6 {
-    justify-self: flex-end;
+.author {
+    align-self: flex-end;
     background-color: grey;
 }
 
