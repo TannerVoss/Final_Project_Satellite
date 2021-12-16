@@ -11,12 +11,12 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
 });
 viewer.scene.globe.enableLighting = true;
 
-const StarLink_24 = `1 44238U 19029D   21346.90763308  .00004453  00000+0  22516-3 0  9998
+const Satellite = `1 44238U 19029D   21346.90763308  .00004453  00000+0  22516-3 0  9998
 2 44238  52.9966 252.5934 0002926  91.7992 268.3337 15.18994418139775`;
 
 const satrec = satellite.twoline2satrec(
-    StarLink_24.split("\n")[0].trim(),
-    StarLink_24.split("\n")[1].trim()
+    Satellite.split("\n")[0].trim(),
+    Satellite.split("\n")[1].trim()
 );
 
 const totalSeconds = 60 * 60 * 6;
@@ -89,7 +89,7 @@ viewer.scene.globe.tileLoadProgressEvent.addEventListener(() => {
 
 let satelliteInput = {};
 
-const tleInput = document.querySelector(".satInput"); // notes
+const tleInput = document.querySelector(".satInput");
 
 const tleButton = document.querySelector(".tleButton");
 
@@ -98,16 +98,24 @@ const homeInput = document.querySelector(".homeInput");
 const homeButton = document.querySelector(".homeButton");
 
 homeButton.addEventListener("click", updateHomeListener);
+
 homeInput.addEventListener("keydown", updateHomeListener);
 
-tleButton.addEventListener("click", function() {});
+tleButton.addEventListener("click", updateTLEListener);
 
-tleInput.addEventListener("keydown", function(event) {
-    if (event.key == "Enter") trackSat();
-});
+tleInput.addEventListener("keydown", updateTLEListener);
 
 function updateHomeListener(event) {
     if (event.key == "Enter" || event.type == "click") setHome();
+}
+
+function updateTLEListener(event) {
+    if (event.key == "Enter" || event.type == "click") setTLE();
+}
+
+function setTLE() {
+    let values = tleInput.value();
+    Satellite = values;
 }
 
 function setHome() {
