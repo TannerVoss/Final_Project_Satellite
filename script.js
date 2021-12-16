@@ -11,12 +11,12 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
 });
 viewer.scene.globe.enableLighting = true;
 
-const Satellite = `1 44238U 19029D   21346.90763308  .00004453  00000+0  22516-3 0  9998
+const StarLink_24 = `1 44238U 19029D   21346.90763308  .00004453  00000+0  22516-3 0  9998
 2 44238  52.9966 252.5934 0002926  91.7992 268.3337 15.18994418139775`;
 
 const satrec = satellite.twoline2satrec(
-    Satellite.split("\n")[0].trim(),
-    Satellite.split("\n")[1].trim()
+    StarLink_24.split("\n")[0].trim(),
+    StarLink_24.split("\n")[1].trim()
 );
 
 const totalSeconds = 60 * 60 * 6;
@@ -98,23 +98,18 @@ const homeInput = document.querySelector(".homeInput");
 const homeButton = document.querySelector(".homeButton");
 
 homeButton.addEventListener("click", updateHomeListener);
-
 homeInput.addEventListener("keydown", updateHomeListener);
 
-tleButton.addEventListener("click", updateTLEListener);
+tleButton.addEventListener("click", addSatellite);
 
-tleInput.addEventListener("keydown", updateTLEListener);
+tleInput.addEventListener("keydown", addSatellite);
+
+function addSatellite(event) {
+    if (event.key == "Enter" || event.type == "click") setTLE(tleInput.value);
+}
 
 function updateHomeListener(event) {
     if (event.key == "Enter" || event.type == "click") setHome();
-}
-
-function updateTLEListener(event) {
-    if (event.key == "Enter" || event.type == "click") setTLE();
-}
-
-function setTLE() {
-
 }
 
 function setHome() {
@@ -132,6 +127,52 @@ function setHome() {
         );
         homeInput.style.border = "none";
         homeInput.blur();
+    }
+}
+
+function setTLE(val) {
+    let nextSat = val;
+
+    try {
+        tleInput.style.border = "none";
+        const satrec = satellite.twoline2satrec(
+            nextSat.split("\n")[0].trim(),
+            nextSat.split("\n")[1].trim()
+        );
+
+        const positionsOverTime = new Cesium.SampledPositionProperty();
+        for (let i = 0; i < totalSeconds; i += timestepInSeconds) {
+            const time = Cesium.JulianDate.addSeconds(
+                start,
+                i,
+                new Cesium.JulianDate()
+            );
+            const jsDate = Cesium.JulianDate.toDate(time);
+
+            const positionAndVelocity = satellite.propagate(satrec, jsDate);
+            const gmst = satellite.gstime(jsDate);
+            const p = satellite.eciToGeodetic(positionAndVelocity.position, gmst);
+
+            const position = Cesium.Cartesian3.fromRadians(
+                p.longitude,
+                p.latitude,
+                p.height * 550
+            ); // Pull Position from SatelliteJS
+            positionsOverTime.addSample(time, position);
+        }
+        viewer.entities.add({
+            position: positionsOverTime,
+            billboard: {
+                image: getDataUrl(),
+                scale: 1.0,
+                scaleByDistance: new Cesium.NearFarScalar(0, 1.5, 8.0e6, 0.05),
+            },
+        });
+        tleInput.value = "";
+        tleInput.blur();
+    } catch (error) {
+        console.error(error);
+        tleInput.style.border = "2px solid red";
     }
 }
 
