@@ -17,14 +17,34 @@
 </head>
 
 <body>
+    <div class="title">
+        <div class="mainTitle">
+            <h1>StarLink Satellite Tracker</h1>
+        </div>
+        <div class="author">
+            <h6>By Tanner Voss</h6>
+        </div>
+    </div>
+
     <div id="cesiumContainer"></div>
-    <h1>StarLink Satellite Tracker</h1>
     <section>
-        <h2>Input TLE data below</h2>
-        <div class="card">
-            <div class="search">
-                <textarea class="satInput" placeholder="1 44238U 19029D   21349.40785262  .00005641  00000+0  28092-3 0  9994 &#10 2 44238  52.9961 241.1340 0002909  98.2402 261.8922 15.19025283141816"></textarea>
+        <div class="section">
+            <h2>Input TLE data below</h2>
+
+            <div class="searchCard">
+                <div class="satSearch">
+                    <textarea autofocus class="satInput" placeholder="1 44238U 19029D   21349.40785262  .00005641  00000+0  28092-3 0  9994 &#10 2 44238  52.9961 241.1340 0002909  98.2402 261.8922 15.19025283141816"></textarea>
+                    <button class="tleButton">Locate</button>
+                </div>
             </div>
+            <h2>Input Home Coordinates (lat, long)</h2>
+            <div class="homeCard">
+                <div class="homeSearch">
+                    <textarea class="homeInput" placeholder="-104.95242363746804, 40.12636140128358"></textarea>
+                    <button class="homeButton">Set</button>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 
