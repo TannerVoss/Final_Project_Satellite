@@ -115,6 +115,7 @@ textarea.satInput {
     height: 22px;
     line-height: 1;
     resize: none;
+    text-align: center;
 }
 
 textarea.satInput:hover {
@@ -138,6 +139,7 @@ textarea.homeInput {
     height: 16px;
     line-height: 1;
     resize: none;
+    text-align: center;
 }
 
 textarea.homeInput:hover {
