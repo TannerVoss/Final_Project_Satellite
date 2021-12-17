@@ -19,7 +19,7 @@ const satrec = satellite.twoline2satrec(
     StarLink_24.split("\n")[1].trim()
 );
 
-const totalSeconds = 60 * 60 * 6;
+const totalSeconds = 60 * 60 * 24;
 const timestepInSeconds = 10;
 const start = Cesium.JulianDate.fromDate(new Date());
 const stop = Cesium.JulianDate.addSeconds(
@@ -106,6 +106,7 @@ tleInput.addEventListener("keydown", addSatellite);
 
 function addSatellite(event) {
     if (event.key == "Enter" || event.type == "click") setTLE(tleInput.value);
+
 }
 
 function updateHomeListener(event) {
@@ -114,6 +115,7 @@ function updateHomeListener(event) {
 
 function setHome() {
     let values = homeInput.value.split(",");
+    event.preventDefault();
     if (
         values.length != 2 ||
         isNaN(parseFloat(values[1].trim())) ||
@@ -132,7 +134,7 @@ function setHome() {
 
 function setTLE(val) {
     let nextSat = val;
-
+    event.preventDefault();
     try {
         tleInput.style.border = "none";
         const satrec = satellite.twoline2satrec(
