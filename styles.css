@@ -1,266 +1,293 @@
 html,
 body {
-  margin: 2px;
-  padding: 2px;
-  height: 90%;
-  background-color: black;
-  color: white;
+    margin: 2px;
+    padding: 2px;
+    height: 90%;
+    background-color: black;
+    color: white;
 }
 
 .title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
 }
 
 .title h1 {
-  margin: 1px;
-  margin-top: 5px;
-  padding: 1px;
+    margin: 1px;
+    margin-top: 5px;
+    padding: 1px;
 }
 
 .author {
-  align-self: flex-end;
+    align-self: flex-end;
 }
 
 .title h6 {
-  margin: 1px;
+    margin: 1px;
 }
 
 #cesiumContainer {
-  height: 70vh;
-  margin-bottom: 10px;
+    height: 70vh;
+    margin-bottom: 10px;
 }
 
 .section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  margin: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1px;
 }
 
 h1 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 50px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 50px;
 }
 
 h2 {
-  margin: 1px;
+    margin: 1px;
 }
 
 .TLERefCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: rgb(43, 42, 42);
-  color: white;
-  opacity: 0.9;
-  padding: 1px;
-  border-radius: 15px;
-  width: 100%;
-  height: 140px;
-  max-width: 220px;
-  margin-top: 10px;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(43, 42, 42);
+    color: white;
+    opacity: 0.9;
+    padding: 1px;
+    border-radius: 15px;
+    width: 100%;
+    height: 140px;
+    max-width: 220px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .TLERefCard h5 {
-  margin: 1px;
+    margin: 1px;
 }
 
 .TLERefCard h3 {
-  margin: 1px;
+    margin: 1px;
 }
 
 .inputCard {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  align-items: center;
-  margin: 1px;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    margin: 1px;
+    justify-content: center;
 }
 
 .searchCard {
-  display: flex;
-  justify-content: space-around;
-  background-color: darkgray;
-  color: white;
-  opacity: 0.9;
-  padding: 1px;
-  margin: 1px;
-  margin-bottom: 10px;
-  border-radius: 25px;
-  width: 100%;
-  height: 36px;
-  max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    background-color: darkgray;
+    color: white;
+    opacity: 0.9;
+    padding: 1px;
+    margin: 1px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    width: 100%;
+    height: 36px;
+    max-width: 500px;
 }
 
 .homeCard {
-  display: flex;
-  flex-direction: row;
-  align-items: space-around;
-  justify-content: space-around;
-  background-color: darkgray;
-  color: white;
-  opacity: 0.9;
-  padding: 1px;
-  border-radius: 25px;
-  width: 100%;
-  height: 36px;
-  max-width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+    background-color: darkgray;
+    color: white;
+    opacity: 0.9;
+    padding: 1px;
+    border-radius: 25px;
+    width: 100%;
+    height: 36px;
+    max-width: 300px;
 }
 
 .TLEButton {
-  margin: 0.5em;
-  width: 150px;
-  border: none;
-  border-radius: 25px;
-  outline: none;
-  padding: 8px;
-  background-color: grey;
-  cursor: pointer;
-  transition: 0.35s ease;
-  font-weight: 900;
-  border: solid white 2px;
-  box-shadow: 0px 0px 12px 2.3px lightskyblue;
+    margin: 0.5em;
+    width: 150px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    padding: 8px;
+    background-color: grey;
+    cursor: pointer;
+    transition: 0.35s ease;
+    font-weight: 900;
+    border: solid white 2px;
+    box-shadow: 0px 0px 12px 2.3px lightskyblue;
 }
 
 .satSearch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1px;
-  padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    padding: 1px;
 }
 
 .homeSearch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1px;
-  padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    padding: 1px;
 }
 
 textarea.satInput {
-  border-radius: 15px;
-  outline: none;
-  border: none;
-  font-family: inherit;
-  font-size: 70%;
-  font-weight: 900;
-  text-indent: 5px;
-  transition: 0.35s ease;
-  width: 100%;
-  background-color: lightskyblue;
-  width: 400px;
-  height: 22px;
-  line-height: 1;
-  resize: none;
-  text-align: center;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: 70%;
+    font-weight: 900;
+    text-indent: 5px;
+    transition: 0.35s ease;
+    width: 100%;
+    background-color: lightskyblue;
+    width: 400px;
+    height: 22px;
+    line-height: 1;
+    resize: none;
+    text-align: center;
 }
 
 textarea.satInput:hover {
-  background-color: black;
-  color: rgb(169, 238, 243);
-  box-shadow: 0px 0px 12px 2.3px #740506;
+    background-color: black;
+    color: rgb(169, 238, 243);
+    box-shadow: 0px 0px 12px 2.3px #740506;
 }
 
 textarea.homeInput {
-  border-radius: 15px;
-  outline: none;
-  border: none;
-  font-family: inherit;
-  font-size: 70%;
-  font-weight: 900;
-  text-indent: 5px;
-  transition: 0.35s ease;
-  width: 100%;
-  background-color: lightskyblue;
-  width: 220px;
-  height: 16px;
-  line-height: 1;
-  resize: none;
-  text-align: center;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: 70%;
+    font-weight: 900;
+    text-indent: 5px;
+    transition: 0.35s ease;
+    width: 100%;
+    background-color: lightskyblue;
+    width: 220px;
+    height: 16px;
+    line-height: 1;
+    resize: none;
+    text-align: center;
 }
 
 textarea.homeInput:hover {
-  background-color: black;
-  color: rgb(169, 238, 243);
-  box-shadow: 0px 0px 12px 2.3px #740506;
+    background-color: black;
+    color: rgb(169, 238, 243);
+    box-shadow: 0px 0px 12px 2.3px #740506;
 }
 
 .LiveSats {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: rgb(43, 42, 42);
-  color: white;
-  opacity: 0.9;
-  padding: 1px;
-  border-radius: 15px;
-  width: 100%;
-  height: 140px;
-  max-width: 500px;
-  margin-top: 10px;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(43, 42, 42);
+    color: white;
+    opacity: 0.9;
+    padding: 1px;
+    border-radius: 15px;
+    width: 100%;
+    height: 140px;
+    max-width: 300px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .LiveSats h3 {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
-LiveSats.SatList {
-  margin-top: 2px;
-  background-color: white;
+.SatList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(43, 42, 42);
+    color: white;
+    opacity: 0.9;
+    padding: 1px;
+    border-radius: 15px;
+    width: 100%;
+    height: 140px;
+    max-width: 220px;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(43, 42, 42);
+    color: white;
+    opacity: 0.9;
+    padding: 1px;
+    border-radius: 15px;
+    width: 100%;
+    height: 140px;
+    max-width: 220px!important;
+    margin-top: 10px;
+    text-align: center;
 }
 
 button {
-  margin: 0.5em;
-  border: none;
-  border-radius: 25px;
-  outline: none;
-  padding: 8px;
-  background-color: grey;
-  cursor: pointer;
-  transition: 0.35s ease;
+    margin: 0.5em;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    padding: 8px;
+    background-color: grey;
+    cursor: pointer;
+    transition: 0.35s ease;
 }
 
 button:hover {
-  background-color: black;
-  color: lightgrey;
-  box-shadow: 0px 0px 12px 2.3px #740506;
+    background-color: black;
+    color: lightgrey;
+    box-shadow: 0px 0px 12px 2.3px #740506;
 }
 
 ::placeholder {
-  font-size: 100%;
-  font-weight: 900;
-  text-indent: 5px;
+    font-size: 100%;
+    font-weight: 900;
+    text-indent: 5px;
 }
 
 .alert {
-  width: 100%;
-  max-width: 400px;
-  padding: 0.6rem 1rem;
-  text-align: center;
-  margin: auto 0;
-  position: fixed;
-  top: 1rem;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    margin: auto 0;
+    position: fixed;
+    top: 1rem;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 .alert-danger {
-  background-color: tomato;
+    background-color: tomato;
 }
 
 .alert-success {
-  background-color: aquamarine;
+    background-color: aquamarine;
 }
