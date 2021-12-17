@@ -25,7 +25,7 @@
             <h6>By Tanner Voss</h6>
         </div>
     </div>
-
+    <div class="alert hidden"></div>
     <div id="cesiumContainer"></div>
     <section>
         <div class="section">
@@ -38,7 +38,7 @@
             </div>
             <div class="inputCard">
                 <h2>Input TLE Data</h2>
-                <div class="searchCard">
+                <div class="searchCard" title="Paste Title and TLE Number for results">
                     <div class="satSearch">
                         <textarea autofocus class="satInput" placeholder="1 44238U 19029D   21349.40785262  .00005641  00000+0  28092-3 0  9994 &#10 2 44238  52.9961 241.1340 0002909  98.2402 261.8922 15.19025283141816"></textarea>
                         <button class="tleButton">Locate</button>
@@ -54,21 +54,16 @@
             </div>
 
             <div class="LiveSats">
-                <h3>Satellites Being Tracked</h3>
-                <form class="form">
-                    <div class="form-group">
-                        <label for="title"></label>
-                    </div>
-                </form>
                 <div class="SatList">
                     <table class="table" style="min-width: 680px; margin: 2rem">
                         <thead>
                             <tr>
+                                <th>Tracked Satellite</th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
-                            <tr>
-                                <td>1 44238U 19029D 21349.40785262 .00005641 00000+0 28092-3 0 9994 <br> 2 44238 52.9961 241.1340 0002909 98.2402 261.8922 15.19025283141816</td>
+                            <tr id="0">
+                                <td title="1 44238U 19029D 21349.40785262 .00005641 00000+0 28092-3 0 9994 2 44238 52.9961 241.1340 0002909 98.2402 261.8922 15.19025283141816">STARLINK-24</td>
                             </tr>
                         </tbody>
                     </table>
@@ -80,5 +75,3 @@
 </body>
 
 </html>
-
-<!-- <a href="https://www.vecteezy.com/free-vector/satellite">Satellite Vectors by Vecteezy</a> -->
