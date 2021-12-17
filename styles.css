@@ -61,9 +61,8 @@ h2 {
     opacity: 0.9;
     padding: 1px;
     border-radius: 15px;
-    width: 100%;
     height: 140px;
-    max-width: 220px;
+    width: 220px;
     margin-top: 10px;
     text-align: center;
 }
@@ -199,14 +198,11 @@ textarea.homeInput:hover {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(43, 42, 42);
-    color: white;
-    opacity: 0.9;
     padding: 1px;
     border-radius: 15px;
     width: 100%;
     height: 140px;
-    max-width: 300px;
+    width: 220px;
     margin-top: 10px;
     text-align: center;
 }
@@ -285,9 +281,9 @@ button:hover {
 }
 
 .alert-danger {
-    background-color: tomato;
+    background-color: #740506;
 }
 
 .alert-success {
-    background-color: aquamarine;
+    background-color: lightskyblue;
 }

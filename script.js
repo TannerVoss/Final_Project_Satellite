@@ -11,6 +11,7 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
 });
 viewer.scene.globe.enableLighting = true;
 
+
 const StarLink_24 = `1 44238U 19029D   21346.90763308  .00004453  00000+0  22516-3 0  9998
   2 44238  52.9966 252.5934 0002926  91.7992 268.3337 15.18994418139775`;
 
@@ -67,7 +68,7 @@ viewer.clock.startTime = start.clone();
 viewer.clock.stopTime = stop.clone();
 viewer.clock.currentTime = start.clone();
 viewer.timeline.zoomTo(start, stop);
-viewer.clock.multiplier = 40;
+viewer.clock.multiplier = 500;
 viewer.clock.clockRange = Cesium.ClockRange.LOOP_STOP;
 
 const positionsOverTime = new Cesium.SampledPositionProperty();
@@ -117,7 +118,7 @@ var bluePin = viewer.entities.add({
 let initialized = false;
 viewer.scene.globe.tileLoadProgressEvent.addEventListener(() => {
     if (!initialized && viewer.scene.globe.tilesLoaded === true) {
-        viewer.clock.shouldAnimate = false; // change to true to have it run when loaded
+        viewer.clock.shouldAnimate = true; // change to true to have it run when loaded
         initialized = true;
         viewer.scene.camera.zoomOut(7000000);
     }
