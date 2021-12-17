@@ -25,20 +25,20 @@
             <h6>By Tanner Voss</h6>
         </div>
     </div>
-
+    <div class="alert hidden"></div>
     <div id="cesiumContainer"></div>
     <section>
         <div class="section">
             <div class="TLERefCard">
                 <h3>Starlink TLE data Here</h3>
-                <h5>Copy lines 1 & 2 exactly</h5>
+                <h5>Copy lines 1 & 2 exactly<br>Do not include satellite name</h5>
                 <div class="TLELink">
                     <a href="https://celestrak.com/NORAD/elements/starlink.txt" target="_blank" rel="noopener"><button class="TLEButton">Take Me To TLE Data Source</button></a>
                 </div>
             </div>
             <div class="inputCard">
                 <h2>Input TLE Data</h2>
-                <div class="searchCard">
+                <div class="searchCard" title="Paste Title and TLE Number for results">
                     <div class="satSearch">
                         <textarea autofocus class="satInput" placeholder="1 44238U 19029D   21349.40785262  .00005641  00000+0  28092-3 0  9994 &#10 2 44238  52.9961 241.1340 0002909  98.2402 261.8922 15.19025283141816"></textarea>
                         <button class="tleButton">Locate</button>
@@ -54,14 +54,24 @@
             </div>
 
             <div class="LiveSats">
-                <h3>Satellites Being Tracked</h3>
+                <div class="SatList">
+                    <table class="table" style="min-width: 680px; margin: 2rem">
+                        <thead>
+                            <tr>
+                                <th>Tracked Satellite</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr id="0">
+                                <td title="1 44238U 19029D 21349.40785262 .00005641 00000+0 28092-3 0 9994 2 44238 52.9961 241.1340 0002909 98.2402 261.8922 15.19025283141816">STARLINK-24</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
         </div>
         </div>
     </section>
 </body>
 
 </html>
-
-<!-- <a href="https://www.vecteezy.com/free-vector/satellite">Satellite Vectors by Vecteezy</a> -->
