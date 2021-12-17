@@ -31,7 +31,7 @@
         <div class="section">
             <div class="TLERefCard">
                 <h3>Starlink TLE data Here</h3>
-                <h5>Copy lines 1 & 2 exactly<br>Do not include satellite name</h5>
+                <h5>Copy all 3 lines<br>Include satellite name</h5>
                 <div class="TLELink">
                     <a href="https://celestrak.com/NORAD/elements/starlink.txt" target="_blank" rel="noopener"><button class="TLEButton">Take Me To TLE Data Source</button></a>
                 </div>
@@ -40,14 +40,14 @@
                 <h2>Input TLE Data</h2>
                 <div class="searchCard" title="Paste Title and TLE Number for results">
                     <div class="satSearch">
-                        <textarea autofocus class="satInput" placeholder="1 44238U 19029D   21349.40785262  .00005641  00000+0  28092-3 0  9994 &#10 2 44238  52.9961 241.1340 0002909  98.2402 261.8922 15.19025283141816"></textarea>
+                        <textarea style="overflow:hidden" autofocus class="satInput" placeholder="1 44238U 19029D   21349.40785262  .00005641  00000+0  28092-3 0  9994 &#10 2 44238  52.9961 241.1340 0002909  98.2402 261.8922 15.19025283141816"></textarea>
                         <button class="tleButton">Locate</button>
                     </div>
                 </div>
                 <h2>Input Home Coordinates (long, lat)</h2>
                 <div class="homeCard">
                     <div class="homeSearch">
-                        <textarea class="homeInput" placeholder="40.12636140128358, -104.95242363746804" rows="1"></textarea>
+                        <textarea style="overflow:hidden" class="homeInput" placeholder="40.12636140128358, -104.95242363746804" rows="1"></textarea>
                         <button class="homeButton">Set</button>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
 
             <div class="LiveSats">
                 <div class="SatList">
-                    <table class="table" style="min-width: 680px; margin: 2rem">
+                    <table class="table" style="min-width: 200px; margin: 2px">
                         <thead>
                             <tr>
                                 <th>Tracked Satellite</th>

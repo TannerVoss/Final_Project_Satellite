@@ -50,42 +50,6 @@ class SatList {
 
 const satList = new SatList(liveSatellite);
 
-const liveSatellite = [{
-    id: 0,
-    title: "STARLINK-24",
-    tle: "1 44238U 19029D   21349.40785262  .00005641  00000+0  28092-3 0  9994 &#10 2 44238  52.9961 241.1340 0002909  98.2402 261.8922 15.19025283141816",
-}, ];
-
-class LiveSatellite {
-    constructor(id, title, tle) {
-        this.id = id;
-        this.title = title;
-        this.tle = tle;
-    }
-}
-
-class SatList {
-    constructor(satellites) {
-        this.nextId = satellites.length;
-        this.satellites = satellites;
-    }
-    addSatellite(title, tle) {
-        const newSat = new LiveSatellite(this.nextId++, title, tle);
-        this.satellites.push(newSat);
-
-        const tbody = document.getElementById("tableBody");
-        const tr = document.createElement("tr");
-        const td = document.createElement("td");
-        td.textContent = newSat.title;
-        td.title = newSat.tle;
-
-        tr.appendChild(td);
-        tbody.appendChild(tr);
-    }
-}
-
-const satList = new SatList(liveSatellite);
-
 const satrec = satellite.twoline2satrec(
     StarLink_24.split("\n")[0].trim(),
     StarLink_24.split("\n")[1].trim()
@@ -264,23 +228,6 @@ function setTLE(val) {
         tleInput.style.border = "2px solid red";
         flashAlert(error.message, "danger");
     }
-}
-
-function flashAlert(msg, type) {
-    let alertOpposites = {
-        danger: "success",
-        success: "danger",
-    };
-
-    let alert = document.querySelector(".alert");
-    alert.textContent = msg;
-    alert.classList.add(`alert-${type}`);
-    alert.classList.remove(`alert-${alertOpposites[type]}`);
-    alert.classList.remove("hidden");
-
-    setTimeout(() => {
-        alert.classList.add("hidden");
-    }, 3000);
 }
 
 function flashAlert(msg, type) {
